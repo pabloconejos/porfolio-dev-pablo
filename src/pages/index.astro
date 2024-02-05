@@ -10,15 +10,17 @@ import Experience from "../components/Experience.astro";
 import SectionConatiner from "../components/icons/sectionConatiner.astro";
 import LapTop from "../components/icons/LapTop.astro";
 import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
+import SobreMi from "../components/SobreMi.astro";
 ---
 
 <Layout title="Porfolio de Pablo Conejos - Desarrollador y Programador WEB" description="Actualmente trabjando y estudiando siempre abierto a nuevas propuestas">
     <main class="px-4">
 
-        <SectionConatiner class="py-44 pb-24">
+        <SectionConatiner id="contacto" class="py-44 pb-24">
             <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row gap-x-4 pb-6 lg:pb-10">
                 Hey, Soy Pablo Conejos <a
-                    href="www.linkedin.com/in/pablo-conejos-chirivella-145024252"
+                    href="https://www.linkedin.com/in/pablo-conejos-chirivella-145024252/"
                     class="flex justify-center items-center"
                     rel="noopener"
                     target="_blank"
@@ -26,8 +28,8 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
                     <Badge>Trabajando</Badge></a>
             </h1>
             <h2 class="text-xl lg:text-2xl opacity-85 text-wrap max-w-[700px]">
-                <span>Tecnico superior en DAW Y DAM.</span><span class="text-yellow-200/90"> +1 de experirencia trabajando como desarollador.</span>
-                <span class="opacity-85">Actualmente sigo formandome y trabajando.</span><span class="text-red-100/90"> De valencia España 🇪🇸</span>
+                <span>Tecnico superior en DAW Y DAM.</span><span class="text-pink-500"> +1 de experirencia trabajando como desarollador.</span>
+                <span class="">Actualmente sigo formandome y trabajando.</span><span class=""> De valencia España 🇪🇸</span>
             </h2>
 
             <nav class="flex gap-4 mt-8 flex-wrap">
@@ -55,7 +57,15 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
                 <CodeIcon class="size-11"/>
                 Proyectos
             </h2>
+            <Projects />
+        </SectionConatiner>
+        <SectionConatiner id="sobre-mi">
+            <h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+                <CodeIcon class="size-11"/>
+                Sobre mí
 
+            </h2>
+            <SobreMi />
         </SectionConatiner>
 
     </main>

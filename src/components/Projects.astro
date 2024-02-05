@@ -1,5 +1,91 @@
 ---
-const PROJECTS = [
+import GitHub from "./icons/GitHub.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Angular from "./icons/Angular.astro";
+import SocialPill from "./icons/SocialPill.astro";
+
+const TAGS = [
+    {
+        Angular: {
+            name: 'Angular',
+            class: 'bg-red text-white',
+            icon: Angular
+        }
+    },
+    {
+        Bootstrap: {
+            name: 'Bootstrap',
+            class: 'bg-red text-white',
+            icon: Bootstrap
+        }
+    }
 
 ]
+
+const PROJECTS = [
+    {
+        img: '',
+        title: 'MUSIC NUMBERS - Pagina web donde consultar tus stats de spotify',
+        description:'MUSIC NUMBERS es una fascinante página web diseñada para ofrecerte una visión detallada de tus estadísticas\n' +
+            '                en Spotify. Desarrollada con la potente tecnología Angular y alimentada por la API oficial de Spotify, esta\n' +
+            '                plataforma te brinda la capacidad de explorar y entender tus hábitos musicales de una manera intuitiva.',
+        tags: [TAGS.Angular,TAGS.Bootstrap],
+        links: [{
+            name: 'link',
+            link: 'link'
+        },'']
+    }
+]
 ---
+<ol class="items-center md:flex ml-2.5 mb-10">
+
+    <article class="bg-gray-800 border border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="">
+            <img class="rounded-t-lg" src="../../public/assets/475shots_so.jpg" alt="" />
+        </a>
+        <div class="p-5">
+            <a href="">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">{PROJECTS[0].title}</h5>
+            </a>
+
+            <p class="mb-3 font-normal text-gray-400 dark:text-gray-400">
+                {PROJECTS[0].description}
+            </p>
+            <ul class="flex gap-x-4 flex-row">
+                <li>
+                    <span class="flex gap-x-2 rounded-full bg-white/90 text-black text-xs p-2">
+                        <Angular class="size-4 " />
+                    Angular
+                    </span>
+
+                </li>
+                <li>
+                    <span class="flex gap-x-2 rounded-full bg-white/90 text-black text-xs p-2">
+                        <Bootstrap class="size-4" />
+                    Bootstrap
+                    </span>
+
+                </li>
+
+                <li>
+                    <a href="https://musicnumbers-f4704.web.app" class="flex rounded-full gap-x-2 bg-green-500 p-2 items-center text-xs hover:scale-105 transition cursor-pointer">
+                        Link
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+
+
+        </div>
+    </article>
+
+
+
+</ol>
+
+
+
+
