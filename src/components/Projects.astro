@@ -1,8 +1,12 @@
 ---
-import GitHub from "./icons/GitHub.astro";
 import Bootstrap from "./icons/Bootstrap.astro";
 import Angular from "./icons/Angular.astro";
-import SocialPill from "./icons/SocialPill.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Turso from "./icons/Turso.astro";
+import Node from "./icons/Node.astro";
+import Nest from "./icons/Nest.astro";
+import Express from "./icons/Express.astro";
+
 
 const TAGS = [
     {
@@ -15,77 +19,120 @@ const TAGS = [
     {
         Bootstrap: {
             name: 'Bootstrap',
-            class: 'bg-red text-white',
+            class: 'bg-blue text-white',
             icon: Bootstrap
         }
-    }
+    },
+    {
+        Tailwind: {
+            name: 'Tailwind',
+            class: 'bg-blue text-white',
+            icon: Tailwind
+        }
+    },
+    {
+        Turso: {
+            name: 'SQL',
+            class: 'bg-blue text-white',
+            icon: Turso
+        }
+    },
+    {
+        Node: {
+            name: 'Node',
+            class: 'bg-blue text-white',
+            icon: Node
+        }
+    },
+    {
+        Express: {
+            name: 'Express',
+            class: 'bg-blue text-white',
+            icon: Express
+        }
+    },
+    {
+        Nest: {
+            name: 'Nest',
+            class: 'bg-blue text-white',
+            icon: Nest
+        }
+    },
+
 ];
 
 const PROJECTS = [
     {
-        img: '',
+        img: './assets/photo-collage.png.png',
+        title: 'ESCRIBA DESIGNS WEB - Porfolio + Back Office',
+        description: `Este es un ejemplo de un proyecto FULL STACK. Para mi cliente, he desarrollado dos sitios web: uno donde sus clientes pueden consultar los diseños, y otro exclusivo para que él pueda gestionar los diseños que se visualizan. Toda la información se almacena en una base de datos SQL.`,
+        tags: [TAGS[0].Angular, TAGS[2].Tailwind, TAGS[3].Turso, TAGS[6].Nest],
+        links: [{
+            name: 'link',
+            link: 'https://escribadesigns-d7b17.web.app'
+        }]
+    },
+    {
+        img: './assets/mylinksweb.png',
+        title: 'MY LINKS - Plataforma para compartir links',
+        description: 'Este proyecto es una aplicación web donde cada usuario puede crear y personalizar su propia página, añadiendo enlaces a sus redes sociales, sitios web personales o cualquier otro enlace que desee compartir. El frontend se encarga de la interfaz de usuario, proporcionando una experiencia atractiva y fácil de usar.',
+        tags: [TAGS[0].Angular, TAGS[2].Tailwind, TAGS[5].Express],
+        links: [{
+            name: 'link',
+            link: 'https://mylinks-sigma.vercel.app/'
+        }]
+    },
+    {
+        img: './assets/475shots_so.jpg',
         title: 'MUSIC NUMBERS - Pagina web donde consultar tus stats de spotify',
-        description: 'MUSIC NUMBERS es una fascinante página web diseñada para ofrecerte una visión detallada de tus estadísticas\n' +
-            '                en Spotify. Desarrollada con la potente tecnología Angular y alimentada por la API oficial de Spotify, esta\n' +
-            '                plataforma te brinda la capacidad de explorar y entender tus hábitos musicales de una manera intuitiva.',
+        description: 'MUSIC NUMBERS es una fascinante página web diseñada para ofrecerte una visión detallada de tus estadísticas en Spotify. Desarrollada con la potente tecnología Angular y alimentada por la API oficial de Spotify, esta plataforma te brinda la capacidad de explorar y entender tus hábitos musicales de una manera intuitiva.',
         tags: [TAGS[0].Angular, TAGS[1].Bootstrap],
         links: [{
             name: 'link',
-            link: 'link'
-        }, '']
+            link: 'https://musicnumbers-f4704.web.app'
+        }]
     }
 ];
-
 ---
-<ol class="items-center md:flex ml-2.5 mb-10">
 
-    <article class="bg-gray-800 border border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="">
-            <img class="rounded-t-lg" src="./assets/475shots_so.jpg" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">{PROJECTS[0].title}</h5>
-            </a>
-
-            <p class="mb-3 font-normal text-gray-400 dark:text-gray-400">
-                {PROJECTS[0].description}
-            </p>
-            <ul class="flex gap-x-4 flex-row">
-                <li>
-                    <span class="flex gap-x-2 rounded-full bg-white/90 text-black text-xs p-2">
-                        <Angular class="size-4 " />
-                    Angular
-                    </span>
-
-                </li>
-                <li>
-                    <span class="flex gap-x-2 rounded-full bg-white/90 text-black text-xs p-2">
-                        <Bootstrap class="size-4" />
-                    Bootstrap
-                    </span>
-
-                </li>
-
-                <li>
-                    <a href="https://musicnumbers-f4704.web.app" class="flex rounded-full gap-x-2 bg-green-500 p-2 items-center text-xs hover:scale-105 transition cursor-pointer">
-                        Link
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
+<ol class="items-center md:flex ml-2.5 mb-10 flex-col gap-16">
+    {PROJECTS.map(project => (
+            <article class="bg-gray-800 border border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-3">
+                <a href={project.links[0].link} target="_blank">
+                    <img class="rounded-t-lg" src={project.img} alt={project.title}/>
+                </a>
+                <div class="p-5">
+                    <a target="_blank" href={project.links[0].link}>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">{project.title}</h5>
                     </a>
-                </li>
-            </ul>
+                    <p class="mb-3 font-normal text-gray-400 dark:text-gray-400">
+                        {project.description}
+                    </p>
+                    <ul class="flex gap-x-4 flex-row flex-wrap">
+                        {project.tags.map(tag => (
+                            tag ? (
+                                    <li>
+            <span class={`flex gap-x-2 rounded-full text-xs p-2 bg-gray-600 border-black mb-2`}>
+                {tag.icon &&
+                        <tag.icon class="size-4"/>} {tag.name}
+            </span>
+                                    </li>
+                            ) : null
+                        ))}
 
-
-
-        </div>
-    </article>
-
-
-
+                        <li>
+                            <a href={project.links[0].link} target="_blank"
+                               class="flex rounded-full gap-x-2 bg-green-500 p-2 items-center text-xs hover:scale-105 transition cursor-pointer">
+                                Link
+                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        ))}
 </ol>
-
-
-
-
