@@ -1,76 +1,11 @@
 ---
+import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from "../components/Badge.astro";
-import Linkedin from "../components/icons/Linkedin.astro";
-import SocialPill from "../components/icons/SocialPill.astro";
-import GitHub from "../components/icons/GitHub.astro";
-import Mail from "../components/icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import SectionConatiner from "../components/sectionConatiner.astro";
-import LapTop from "../components/icons/LapTop.astro";
-import CodeIcon from "../components/icons/CodeIcon.astro";
-import Projects from "../components/Projects.astro";
-import SobreMi from "../components/SobreMi.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Porfolio de Pablo Conejos - Desarrollador y Programador WEB" description="Actualmente trabjando y estudiando siempre abierto a nuevas propuestas">
-    <main class="px-4">
-
-        <SectionConatiner id="contacto" class="py-44 pb-24">
-            <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row gap-x-4 pb-6 lg:pb-10">
-                Hey, Soy Pablo Conejos <a
-                    href="https://www.linkedin.com/in/pablo-conejos-chirivella-145024252/"
-                    class="flex justify-center items-center"
-                    rel="noopener"
-                    target="_blank"
-                >
-                    <Badge>Trabajando</Badge></a>
-            </h1>
-            <h2 class="text-xl lg:text-2xl opacity-85 text-wrap max-w-[700px]">
-                <span>Software Developer.</span><span class="text-pink-500"> +2 de experirencia trabajando como desarollador.</span>
-                <span class="">Actualmente sigo formándome y trabajando.</span><span class=""> De valencia España 🇪🇸</span>
-            </h2>
-
-            <nav class="flex gap-4 mt-8 flex-wrap">
-                <SocialPill href="https://www.linkedin.com/in/pablo-conejos-chirivella-145024252/">
-                    <Linkedin class="size-4 md:size-6"/>
-                </SocialPill>
-                <SocialPill href="https://github.com/pabloconejos">
-                    <GitHub class="size-4 md:size-6"/>
-                </SocialPill>
-                <SocialPill href="mailto:pconejos03@gmail.com">
-                    <Mail class="size-4 md:size-6"/>
-                    pconejos03@gmail.com
-                </SocialPill>
-            </nav>
-        </SectionConatiner>
-        <SectionConatiner id="sobre-mi">
-            <h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
-                <CodeIcon class="size-11"/>
-                Sobre mí
-
-            </h2>
-            <SobreMi />
-        </SectionConatiner>
-       
-        <SectionConatiner id="proyectos">
-            <h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
-                <CodeIcon class="size-11"/>
-                Proyectos
-            </h2>
-            <Projects />
-        </SectionConatiner>
-
-        <SectionConatiner id="trayectoria">
-            <h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
-                <LapTop class="size-11"/>
-                Trayectoria
-            </h2>
-            <Experience/>
-        </SectionConatiner>
-
-    </main>
+<Layout>
+	<Welcome />
 </Layout>
-
-
